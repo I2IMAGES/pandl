@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI-Powered P/L Automation Solution - EJ Steele</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+            color: white;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 1rem;
+        }
+        
+        .hero {
+            text-align: center;
+            padding: 3rem 1rem;
+            background: linear-gradient(135deg, rgba(96, 165, 250, 0.1), rgba(167, 139, 250, 0.1));
+            border-radius: 20px;
+            margin-bottom: 3rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .hero-icon {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+        
+        .hero h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #60a5fa, #a78bfa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .hero-subtitle {
+            font-size: 1.3rem;
+            color: #94a3b8;
+            margin-bottom: 1.5rem;
+        }
+        
+        .hero-description {
+            font-size: 1.1rem;
+            color: #cbd5e1;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .section {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .section h2 {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            color: #60a5fa;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .section h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: #a78bfa;
+        }
+        
+        .problem-solution {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .problem, .solution {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 1.5rem;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .problem {
+            border-left: 4px solid #ef4444;
+        }
+        
+        .solution {
+            border-left: 4px solid #10b981;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .feature-card {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 1.5rem;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .feature-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+        
+        .feature-title {
+            font-size: 1.2rem;
+            color: #60a5fa;
+            margin-bottom: 0.5rem;
+        }
+        
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+            margin: 1.5rem 0;
+        }
+        
+        .tech-tag {
+            background: linear-gradient(135deg, rgba(96, 165, 250, 0.2), rgba(167, 139, 250, 0.2));
+            color: #60a5fa;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            border: 1px solid rgba(96, 165, 250, 0.3);
+        }
+        
+        .timeline {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 2rem;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .timeline-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+        }
+        
+        .timeline-number {
+            background: linear-gradient(135deg, #60a5fa, #a78bfa);
+            color: white;
+            width: 2.5rem;
+            height: 2.5rem;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin-right: 1rem;
+            flex-shrink: 0;
+        }
+        
+        .benefits-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+        
+        .benefit-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.8rem;
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .benefit-icon {
+            color: #10b981;
+            font-size: 1.2rem;
+            margin-top: 0.2rem;
+        }
+        
+        .cta-section {
+            text-align: center;
+            padding: 3rem 1rem;
+            background: linear-gradient(135deg, rgba(96, 165, 250, 0.15), rgba(167, 139, 250, 0.15));
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            margin-top: 3rem;
+        }
+        
+        .cta-title {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: white;
+        }
+        
+        .cta-subtitle {
+            font-size: 1.1rem;
+            color: #cbd5e1;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, #60a5fa, #a78bfa);
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 12px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(96, 165, 250, 0.3);
+        }
+        
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            padding: 1rem 2rem;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 12px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+        
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+        }
+        
+        .contact-info {
+            text-align: center;
+            margin-top: 2rem;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .contact-info h3 {
+            color: #60a5fa;
+            margin-bottom: 1rem;
+        }
+        
+        .contact-info p {
+            color: #cbd5e1;
+            margin-bottom: 0.5rem;
+        }
+        
+        .contact-info a {
+            color: #60a5fa;
+            text-decoration: none;
+        }
+        
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+        
+        @media (max-width: 768px) {
+            .problem-solution {
+                grid-template-columns: 1fr;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.1rem;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .container {
+                padding: 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Hero Section -->
+        <div class="hero">
+            <span class="hero-icon">🤖</span>
+            <h1>AI-Powered P/L Automation</h1>
+            <p class="hero-subtitle">Escape "Copy/Paste Hades" Forever</p>
+            <p class="hero-description">
+                Transform your monthly P/L reporting process from hours of manual work to minutes of intelligent automation. 
+                AI handles data extraction, variance analysis, and Board report generation while you focus on strategic insights.
+            </p>
+        </div>
+
+        <!-- Problem/Solution -->
+        <div class="section">
+            <h2>📊 The Challenge</h2>
+            <div class="problem-solution">
+                <div class="problem">
+                    <h3>Current Pain Points</h3>
+                    <ul>
+                        <li>Hours spent copying/pasting P/L data</li>
+                        <li>Manual variance calculations prone to errors</li>
+                        <li>Inconsistent analysis across clients</li>
+                        <li>Rushed Board report preparation</li>
+                        <li>No time for strategic insights</li>
+                    </ul>
+                </div>
+                <div class="solution">
+                    <h3>AI-Powered Solution</h3>
+                    <ul>
+                        <li>Automated data extraction from any format</li>
+                        <li>AI-driven variance analysis with context</li>
+                        <li>Standardized methodology across all clients</li>
+                        <li>Professional Board reports generated automatically</li>
+                        <li>Focus on strategic advisory, not data entry</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Key Features -->
+        <div class="section">
+            <h2>⚡ Key Features</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <span class="feature-icon">📄</span>
+                    <h4 class="feature-title">Smart Document Processing</h4>
+                    <p>AI extracts financial data from PDFs, Excel files, and various P/L formats automatically</p>
+                </div>
+                <div class="feature-card">
+                    <span class="feature-icon">🧮</span>
+                    <h4 class="feature-title">Intelligent Variance Analysis</h4>
+                    <p>Calculates month-over-month, quarter-over-quarter changes with statistical significance</p>
+                </div>
+                <div class="feature-card">
+                    <span class="feature-icon">📝</span>
+                    <h4 class="feature-title">Narrative Generation</h4>
+                    <p>AI converts numbers into Board-ready executive summaries and insights</p>
+                </div>
+                <div class="feature-card">
+                    <span class="feature-icon">⚠️</span>
+                    <h4 class="feature-title">Quality Assurance</h4>
+                    <p>Built-in validation catches data errors and flags items needing human review</p>
+                </div>
+                <div class="feature-card">
+                    <span class="feature-icon">📈</span>
+                    <h4 class="feature-title">Visual Dashboards</h4>
+                    <p>Auto-generated charts, graphs, and executive summary presentations</p>
+                </div>
+                <div class="feature-card">
+                    <span class="feature-icon">🔄</span>
+                    <h4 class="feature-title">Continuous Learning</h4>
+                    <p>System improves accuracy based on your feedback and client patterns</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Technology Stack -->
+        <div class="section">
+            <h2>🛠️ Technology Stack</h2>
+            <p>Built with enterprise-grade AI and automation tools:</p>
+            <div class="tech-stack">
+                <span class="tech-tag">n8n Workflow Automation</span>
+                <span class="tech-tag">OpenAI API</span>
+                <span class="tech-tag">Google Cloud Document AI</span>
+                <span class="tech-tag">Airtable Database</span>
+                <span class="tech-tag">Python Analytics</span>
+                <span class="tech-tag">Chart.js Visualization</span>
+            </div>
+        </div>
+
+        <!-- Implementation Timeline -->
+        <div class="section">
+            <h2>🚀 Implementation Process</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-number">1</div>
+                    <div>
+                        <h4>Discovery & Setup (Week 1)</h4>
+                        <p>Configure data sources, client profiles, and variance thresholds</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-number">2</div>
+                    <div>
+                        <h4>AI Training (Week 2)</h4>
+                        <p>Train document processing and variance analysis on your specific data</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-number">3</div>
+                    <div>
+                        <h4>Report Generation (Week 3)</h4>
+                        <p>Build automated report templates and dashboard interfaces</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-number">4</div>
+                    <div>
+                        <h4>Testing & Refinement (Week 4)</h4>
+                        <p>Process test data, refine accuracy, and optimize workflows</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Expected Benefits -->
+        <div class="section">
+            <h2>💼 Expected Benefits</h2>
+            <div class="benefits-list">
+                <div class="benefit-item">
+                    <span class="benefit-icon">⏱️</span>
+                    <div>
+                        <h4>Time Savings</h4>
+                        <p>Reduce reporting time from hours to minutes</p>
+                    </div>
+                </div>
+                <div class="benefit-item">
+                    <span class="benefit-icon">🎯</span>
+                    <div>
+                        <h4>Accuracy</h4>
+                        <p>Eliminate manual calculation errors</p>
+                    </div>
+                </div>
+                <div class="benefit-item">
+                    <span class="benefit-icon">📊</span>
+                    <div>
+                        <h4>Consistency</h4>
+                        <p>Standardized analysis across all clients</p>
+                    </div>
+                </div>
+                <div class="benefit-item">
+                    <span class="benefit-icon">🚀</span>
+                    <div>
+                        <h4>Scalability</h4>
+                        <p>Handle more clients without proportional effort</p>
+                    </div>
+                </div>
+                <div class="benefit-item">
+                    <span class="benefit-icon">🧠</span>
+                    <div>
+                        <h4>Strategic Focus</h4>
+                        <p>Spend time on insights, not data entry</p>
+                    </div>
+                </div>
+                <div class="benefit-item">
+                    <span class="benefit-icon">✨</span>
+                    <div>
+                        <h4>Professional Presentation</h4>
+                        <p>Consistently formatted, Board-ready reports</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Call to Action -->
+        <div class="cta-section">
+            <h2 class="cta-title">Ready to Eliminate Copy/Paste Hades?</h2>
+            <p class="cta-subtitle">
+                Let's discuss how this AI automation solution can transform your P/L reporting process 
+                and free you to focus on strategic advisory work.
+            </p>
+            <div class="cta-buttons">
+                <a href="mailto:ej@inward2onward.com?subject=AI%20P/L%20Automation%20Consultation&body=Hi%20EJ,%0A%0AI'm%20interested%20in%20learning%20more%20about%20the%20AI-Powered%20P/L%20Automation%20solution.%20%0A%0ACurrent%20Situation:%0A-%20Number%20of%20clients:%20%0A-%20Time%20spent%20on%20monthly%20reporting:%20%0A-%20Biggest%20pain%20points:%20%0A%0ALet's%20schedule%20a%20consultation.%0A%0ABest,%0A" class="btn-primary">Schedule Consultation</a>
+                <a href="tel:623-272-8066" class="btn-secondary">Call (623) 272-8066</a>
+            </div>
+        </div>
+
+        <!-- Contact Information -->
+        <div class="contact-info">
+            <h3>EJ Steele</h3>
+            <p>AI Implementation Strategist</p>
+            <p>Inward2Onward Executive Coaching</p>
+            <p>📧 <a href="mailto:ej@inward2onward.com">ej@inward2onward.com</a></p>
+            <p>📱 <a href="tel:623-272-8066">(623) 272-8066</a></p>
+            <p>🌐 Phoenix, Arizona</p>
+        </div>
+    </div>
+
+    <script>
+        // Add smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Add animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe all sections
+        document.querySelectorAll('.section, .feature-card').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
+        });
+
+        // Add click tracking for analytics
+        document.querySelectorAll('.btn-primary, .btn-secondary').forEach(btn => {
+            btn.addEventListener('click', function() {
+                console.log('CTA clicked:', this.textContent);
+                // Add your analytics tracking here
+            });
+        });
+    </script>
+</body>
+</html>
