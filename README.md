@@ -1,0 +1,1 @@
+Transform your monthly P/L reporting process from hours of manual work to minutes of intelligent automation. AI handles data extraction, variance analysis, and Board report generation while you focus on strategic insights.
